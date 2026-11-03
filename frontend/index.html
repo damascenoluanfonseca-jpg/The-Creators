@@ -1,0 +1,11 @@
+from flask import Blueprint, jsonify
+
+travel_bp = Blueprint("travel", __name__)
+
+
+@travel_bp.get("/destinations")
+def get_destinations():
+    return jsonify({
+        "message": "Destination route placeholder.",
+        "data": []
+    })

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The-Creators</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="container nav">
+        <div class="brand">The-Creators</div>
+        <ul>
+          <li><a href="#">Destinations</a></li>
+          <li><a href="#">Plans</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container hero">
+      <section class="hero-copy">
+        <p class="eyebrow">Travel planning</p>
+        <h1>Discover places worth visiting.</h1>
+        <p>
+          A minimal travel application for exploring destinations and preparing smooth trip ideas.
+        </p>
+        <button id="load-data">View destinations</button>
+      </section>
+
+      <aside class="hero-card">
+        <h2>Trip overview</h2>
+        <p>Planned features and placeholders are clearly separated from confirmed implementation.</p>
+      </aside>
+    </main>
+
+    <section class="container">
+      <h2>Destinations</h2>
+      <div id="destination-list" class="card-grid"></div>
+    </section>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
