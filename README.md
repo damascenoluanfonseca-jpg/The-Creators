@@ -2,57 +2,78 @@
 
 # The-Creators
 
-**Explore o mundo. Organize suas próximas ideias de viagem.**
+**Ideias de viagem, organizadas para ir mais longe.**
 
-Uma plataforma acadêmica em desenvolvimento para descoberta de destinos internacionais e organização de informações de viagem.
+Uma aplicação web acadêmica em desenvolvimento, dedicada à descoberta de destinos internacionais e à organização de informações de viagem.
 
 </div>
 
 ---
 
-## Sobre o projeto
+## Visão geral
 
-The-Creators é um projeto colaborativo desenvolvido por quatro estudantes. A proposta é criar uma aplicação web de viagens com frontend em HTML, CSS e JavaScript, backend em Python com Flask e integração por meio da Fetch API.
+The-Creators é um projeto colaborativo desenvolvido por quatro estudantes. A proposta é construir uma experiência web para explorar destinos internacionais e reunir informações relacionadas a viagens.
 
-O projeto está em fase inicial. O escopo funcional e o banco de dados ainda estão sendo definidos; por isso, este README distingue a proposta do que já está implementado.
-
-## Tecnologias
-
-| Camada | Tecnologia |
-| --- | --- |
-| Backend e API | Python, Flask e programação orientada a objetos (OOP) |
-| Interface | HTML, CSS e JavaScript |
-| Comunicação | Fetch API — prevista para a integração entre frontend e backend |
-| Persistência | Banco de dados relacional — mecanismo a definir pela equipe |
+O repositório contém uma estrutura inicial para backend Flask, frontend e scripts de banco de dados. A aplicação ainda está em desenvolvimento: os fluxos finais, o banco de dados e as funcionalidades completas precisam ser definidos pela equipe.
 
 ## Objetivos
 
 - Desenvolver uma aplicação web relacionada a viagens internacionais.
-- Criar uma base para explorar destinos e organizar informações de viagem.
-- Integrar uma interface web a rotas Flask usando JavaScript e Fetch.
-- Praticar modelagem, orientação a objetos e colaboração em equipe.
+- Praticar programação orientada a objetos com Python e Flask.
+- Conectar uma interface em HTML, CSS e JavaScript a rotas do backend.
+- Usar Fetch API para comunicação entre frontend e backend, conforme a integração for implementada.
+- Definir e implementar a persistência de dados após a escolha do banco pela equipe.
 
-## Funcionalidades
+## Tecnologias
 
-**Proposta do projeto:** descoberta de destinos internacionais e organização de informações de viagem.
+| Área | Tecnologia ou escopo |
+| --- | --- |
+| Backend | Python e Flask |
+| Programação | Orientação a objetos (OOP) |
+| Frontend | HTML, CSS e JavaScript |
+| Integração | Fetch API — prevista no escopo do projeto |
+| Banco de dados | Relacional — mecanismo a definir pela equipe |
 
-Os fluxos e recursos finais ainda não foram definidos. Não considere funcionalidades da proposta como implementadas até que estejam confirmadas no código e pela equipe.
+> A tabela descreve a base técnica e os requisitos do projeto; não indica que todas as integrações já estejam concluídas.
 
-## Arquitetura atual
+## Funcionalidades e estado atual
 
-A estrutura abaixo reflete os diretórios presentes no repositório. É um scaffold inicial e pode evoluir conforme o sistema for implementado.
+### Presente no repositório
+
+- Scaffold de uma aplicação Flask com uma rota inicial.
+- Estrutura de pastas para rotas, modelos e acesso a dados.
+- Arquivos iniciais de frontend e um script SQL de seed.
+
+### Proposto, ainda em desenvolvimento
+
+- Explorar destinos internacionais.
+- Organizar informações relacionadas a viagens.
+- Integrar o frontend ao backend usando Fetch API.
+- Conectar o sistema a um banco de dados relacional, após a definição do mecanismo.
+
+Os fluxos e recursos finais ainda precisam ser acordados. Os itens propostos não devem ser considerados funcionalidades concluídas.
+
+## Arquitetura
+
+Estrutura observada no repositório:
 
 ```text
 The-Creators/
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.md
+│   │   └── feature_request.md
 │   └── PULL_REQUEST_TEMPLATE.md
 ├── backend/
-│   ├── app.py
-│   ├── config.py
 │   ├── dao/
+│   │   └── __init__.py
 │   ├── models/
-│   └── routes/
+│   │   └── __init__.py
+│   ├── routes/
+│   │   └── __init__.py
+│   ├��─ __init__.py
+│   ├── app.py
+│   └── config.py
 ├── database/
 │   └── seed.sql
 ├── docs/
@@ -60,75 +81,86 @@ The-Creators/
 │   └── architecture.md
 ├── frontend/
 │   ├── css/
-│   ├── index.html
-│   └── js/
+│   │   └── styles.css
+│   ├── js/
+│   │   └── app.js
+│   └── index.html
 ├── .env.example
 ├── .gitignore
-├── README.md
 └── requirements.txt
 ```
 
-As pastas `dao/`, `models/` e `routes/` são pontos de organização do backend; suas implementações podem estar em andamento. O mecanismo de banco de dados não foi especificado. Consulte a equipe antes de definir configurações ou scripts dependentes de um banco específico.
+As pastas `dao/`, `models/` e `routes/` fazem parte da estrutura atual; a presença delas não significa que essas camadas estejam concluídas. O mecanismo de banco de dados ainda precisa ser confirmado pela equipe.
 
 ## Configuração e execução
 
-Os comandos abaixo pressupõem Python instalado e execução a partir da raiz do repositório.
+### Pré-requisitos
 
-1. Clone o projeto e entre na pasta:
+- Python instalado.
+- A partir da raiz do repositório, consulte `requirements.txt` para as dependências do projeto.
+- O mecanismo e a configuração do banco de dados ainda serão definidos pela equipe.
 
-   ```bash
-   git clone https://github.com/damascenoluanfonseca-jpg/The-Creators.git
-   cd The-Creators
-   ```
+### Preparar o ambiente
 
-2. Crie e ative um ambiente virtual:
+Clone o repositório e entre na pasta do projeto:
 
-   ```bash
-   python -m venv .venv
-   ```
+```bash
+git clone https://github.com/damascenoluanfonseca-jpg/The-Creators.git
+cd The-Creators
+```
 
-   Linux ou macOS:
+Crie e ative um ambiente virtual:
 
-   ```bash
-   source .venv/bin/activate
-   ```
+```bash
+python -m venv .venv
+```
 
-   Windows PowerShell:
+Linux ou macOS:
 
-   ```powershell
-   .venv\Scripts\Activate.ps1
-   ```
+```bash
+source .venv/bin/activate
+```
 
-3. Instale as dependências declaradas no projeto:
+Windows PowerShell:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+```powershell
+.venv\Scripts\Activate.ps1
+```
 
-4. Quando a aplicação exigir configurações locais, use `.env.example` como referência e crie um `.env`. Preencha apenas valores apropriados ao seu ambiente. **Nunca** inclua credenciais reais em commits.
+Instale as dependências listadas no arquivo do projeto:
 
-5. Inicie o backend:
+```bash
+pip install -r requirements.txt
+```
 
-   ```bash
-   python backend/app.py
-   ```
+### Configurações locais
 
-A execução disponível é um ponto de partida para desenvolvimento; rotas, persistência e integração completa devem ser confirmadas conforme a aplicação evoluir. O banco de dados e sua configuração ainda dependem de decisão da equipe.
+Use `.env.example` como referência quando forem necessárias configurações locais. Não adicione senhas, tokens, chaves ou credenciais reais ao repositório.
+
+### Iniciar o backend
+
+A partir da raiz do repositório:
+
+```bash
+python backend/app.py
+```
+
+A execução corresponde ao scaffold disponível; a integração completa com frontend e banco de dados depende das implementações e decisões da equipe.
 
 ## Fluxo de desenvolvimento
 
-- Mantenha `main` como branch estável.
-- Crie branches curtas para tarefas específicas, por exemplo `feat/destination-list` ou `docs/setup`.
-- Abra um Pull Request para revisão antes de integrar mudanças.
-- Prefira commits pequenos e objetivos, usando mensagens claras, como `feat: add destination model` ou `docs: clarify setup`.
-- Atualize a documentação quando uma alteração modificar a configuração, a estrutura ou o comportamento do sistema.
-- Não envie arquivos `.env`, senhas, tokens ou outras credenciais.
+1. Mantenha `main` como branch estável.
+2. Crie uma branch curta para cada tarefa, por exemplo, `feat/destination-list` ou `docs/setup`.
+3. Abra um Pull Request para revisão antes de integrar as alterações.
+4. Faça commits pequenos, com mensagens claras e consistentes, como `feat: add destination model` ou `docs: clarify setup`.
+5. Atualize a documentação quando uma mudança afetar configuração, estrutura ou comportamento.
+6. Nunca inclua arquivos `.env` nem credenciais em commits.
 
 ## Equipe
 
-Projeto desenvolvido por quatro estudantes. Os nomes e usuários do GitHub ainda não foram informados; esta seção será atualizada quando a equipe confirmar os dados.
+Projeto desenvolvido por quatro estudantes. Os nomes e usuários do GitHub ainda não foram informados.
 
-| Integrante | Nome / usuário |
+| Integrante | Nome / usuário do GitHub |
 | --- | --- |
 | 1 | A confirmar |
 | 2 | A confirmar |
@@ -137,8 +169,4 @@ Projeto desenvolvido por quatro estudantes. Os nomes e usuários do GitHub ainda
 
 ## Status
 
-**Em desenvolvimento.** A proposta e a estrutura inicial estão documentadas. Escopo final, banco de dados e funcionalidades ainda precisam ser acordados e implementados pela equipe.
-
----
-
-<sub>Uma base acadêmica para explorar ideias de viagem — construída passo a passo.</sub>
+**Em desenvolvimento.** O repositório contém a estrutura inicial do projeto. O escopo funcional, a escolha do banco de dados e a integração entre as camadas ainda precisam ser finalizados pela equipe.
