@@ -162,10 +162,10 @@ Projeto desenvolvido por quatro estudantes. Os nomes e usuários do GitHub ainda
 
 | Integrante | Nome / usuário do GitHub |
 | --- | --- |
-| 1 | A confirmar |
-| 2 | A confirmar |
-| 3 | A confirmar |
-| 4 | A confirmar |
+| 1 | Luan Fonseca |
+| 2 | Victor Moreira |
+| 3 | Lorenzo Cruz |
+| 4 | Pedro Brandão |
 
 ## Status
 
