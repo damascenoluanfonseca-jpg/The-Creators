@@ -158,7 +158,7 @@ A execução corresponde ao scaffold disponível; a integração completa com fr
 
 ## Equipe
 
-Projeto desenvolvido por quatro estudantes. Os nomes e usuários do GitHub ainda não foram informados.
+Projeto desenvolvido por quatro estudantes.
 
 | Integrante | Nome / usuário do GitHub |
 | --- | --- |
