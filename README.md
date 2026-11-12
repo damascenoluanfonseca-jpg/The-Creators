@@ -74,7 +74,6 @@ The-Creators/
 ├── tests/
 │   └── test_fluxo.py
 ├── .env.example
-├── .gitignore
 └── README.md
 ```
 
