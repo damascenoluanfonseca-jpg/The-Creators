@@ -75,6 +75,7 @@ The-Creators/
 │   └── test_fluxo.py
 ├── .env.example
 └── README.md
+|___ img.png
 ```
 
 A aplicação Flask, a conexão, as classes e as rotas ficam em `backend/Classes/`. Os DAOs em `backend/dao/` executam as consultas e gravações no MariaDB.
