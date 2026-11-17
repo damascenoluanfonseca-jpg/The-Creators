@@ -62,20 +62,24 @@ The-Creators/
 │   │   └── pais_dao.py
 │   │   └── usuario_dao.py
 │   │   └── visita_dao.py
-│   │
-│   │
-│   │
-│   │
 │   ├── config.py
 │   └── requirements.txt
 ├── database/
 │   └── passaporte_sulamericano.sql
 ├── frontend/
 │   ├── css/
+│       └──  styles.css
 │   ├── img/
+│        └── logo.cvg
+│       └──  mapa-sul-americano.svg
+│      └──  perfil.svg
 │   ├── js/
+│      └──  app.js
 │   ├── pages/
-│   └── index.html
+│      └── criar.html
+│       └──  entrar.html
+│      └──  minha_conta.html
+│   ├── index.html
 ├── tests/
 │   └── test_fluxo.py
 ├── .env.example
