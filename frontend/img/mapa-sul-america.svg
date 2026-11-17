@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="464" height="508" viewBox="0 0 464 508" role="group" aria-labelledby="titulo">
+  <title id="titulo">Mapa da América do Sul</title>
+  <!-- Contornos simplificados a partir do Natural Earth. -->
+
+  <style>
+    .pais { cursor: pointer; }
+
+    .contorno {
+      fill: #bdd2aa;
+      stroke: #f9fcf4;
+      stroke-width: 1.4;
+      stroke-linejoin: round;
+    }
+
+    .pais:nth-of-type(even) .contorno { fill: #a8c69f; }
+    .pais:hover .contorno { filter: brightness(0.94); }
+
+    .pais:focus-visible .contorno,
+    .pais.selecionado .contorno {
+      stroke: #173f32;
+      stroke-width: 2.4;
+    }
+
+    .pais.visitado .contorno { fill: #ebc56e; }
+
+    text {
+      font-family: system-ui, sans-serif;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      pointer-events: none;
+    }
+
+    .sigla {
+      font-size: 12px;
+      font-weight: 700;
+      fill: #214435;
+    }
+
+    .oceano {
+      font: italic 19px Georgia, serif;
+      fill: #4d6d62;
+    }
+
+    .linha-rotulo {
+      fill: none;
+      stroke: #577363;
+      stroke-width: 1.1;
+      pointer-events: none;
+    }
+
+    .estrela {
+      display: none;
+      font-size: 20px;
+      fill: #7a4b00;
+      stroke: #fffdf7;
+      stroke-width: 2;
+      paint-order: stroke;
+    }
+
+    .pais.visitado .estrela { display: block; }
+  </style>
+
+  <text class="oceano" x="62" y="251" aria-hidden="true">Pacífico</text>
+  <text class="oceano" x="372" y="364" aria-hidden="true">Atlântico</text>
+
+  <g class="pais" data-pais="COL" role="button" tabindex="0" aria-label="Colômbia">
+    <title>Colômbia</title>
+    <path class="contorno" d="M182 104 180 105 177 99 174 101 159 101 159 105 163 106 163 108 157 109 157 113 161 116 162 120
+      158 141 152 137 157 130 151 127 133 127 129 121 118 113 115 113 108 109 99 110 98 107 88 103
+      87 101 90 101 92 95 96 94 102 87 99 85 100 81 99 75 100 74 99 68 96 65 97 61
+      99 62 101 60 99 56 104 55 113 50 115 42 119 39 131 38 144 30 149 32 147 34 142 36
+      135 43 132 52 136 52 138 57 138 63 142 66 157 66 162 72 178 72 174 82 178 90 174 94
+      179 97Z"></path>
+    <text class="sigla" x="132" y="84" aria-hidden="true">COL</text>
+    <text class="estrela" x="132" y="70" aria-hidden="true">★</text>
+  </g>
+
+  <g class="pais" data-pais="VEN" role="button" tabindex="0" aria-label="Venezuela">
+    <title>Venezuela</title>
+    <path class="contorno" d="M230 78 231 80 228 82 211 87 198 85 201 87 202 96 209 98 204 100 203 102 192 107 186 107
+      182 104 179 97 174 94 178 90 174 82 178 72 162 72 157 66 142 66 138 63 138 57 136 52
+      132 52 135 43 142 36 147 34 147 36 142 37 145 40 145 43 141 47 144 52 148 52 149 47
+      147 45 146 40 156 37 155 34 158 32 161 37 166 37 171 40 171 43 187 42 191 45 197 46
+      202 42 221 41 214 43 217 47 223 47 229 50 230 56 237 57 231 61 230 63 233 66 226 68
+      227 71 224 73Z"></path>
+    <text class="sigla" x="183" y="56" aria-hidden="true">VEN</text>
+    <text class="estrela" x="183" y="42" aria-hidden="true">★</text>
+  </g>
+
+  <g class="pais" data-pais="GUY" role="button" tabindex="0" aria-label="Guiana">
+    <title>Guiana</title>
+    <path class="contorno" d="M262 100 256 99 247 104 238 100 236 94 239 86 235 82 236 79 230 78 224 73 227 71 226 68
+      233 66 230 63 231 61 237 57 247 64 247 67 250 67 258 73 256 79 252 80 251 85 254 90 257 90Z"></path>
+    <path class="linha-rotulo" d="M234 54 241 74"></path>
+    <text class="sigla" x="231" y="49" aria-hidden="true">GUY</text>
+    <text class="estrela" x="242" y="79" aria-hidden="true">★</text>
+  </g>
+
+  <g class="pais" data-pais="SUR" role="button" tabindex="0" aria-label="Suriname">
+    <title>Suriname</title>
+    <path class="contorno" d="M278 97 267 96 267 100 262 100 257 90 254 90 251 85 252 80 256 79 258 73 267 74 274 72
+      283 74 278 80 282 88Z"></path>
+    <path class="linha-rotulo" d="M265 59 267 78"></path>
+    <text class="sigla" x="263" y="54" aria-hidden="true">SUR</text>
+    <text class="estrela" x="267" y="84" aria-hidden="true">★</text>
+  </g>
+
+  <g class="pais" data-pais="GUF" role="button" tabindex="0" aria-label="Guiana Francesa">
+    <title>Guiana Francesa</title>
+    <path class="contorno" d="M300 85 290 98 278 97 282 88 278 80 283 74 291 76Z"></path>
+    <path class="linha-rotulo" d="M294 65 289 80"></path>
+    <text class="sigla" x="295" y="60" aria-hidden="true">GUF</text>
+    <text class="estrela" x="288" y="86" aria-hidden="true">★</text>
+  </g>
+
+  <g class="pais" data-pais="ECU" role="button" tabindex="0" aria-label="Equador">
+    <title>Equador</title>
+    <path class="contorno" d="M115 113 117 118 114 123 106 129 96 132 90 142 86 145 82 142 76 141 76 139 78 137 77 135
+      81 130 80 127 77 130 72 127 73 125 72 119 75 118 79 110 79 107 88 103 98 107 99 110 108 109Z"></path>
+    <text class="sigla" x="92" y="122" aria-hidden="true">ECU</text>
+    <text class="estrela" x="92" y="108" aria-hidden="true">★</text>
+  </g>
+
+  <g class="pais" data-pais="PER" role="button" tabindex="0" aria-label="Peru">
+    <title>Peru</title>
+    <path class="contorno" d="M158 141 151 140 135 147 132 152 133 156 128 158 128 161 126 162 134 172 132 175 137 175 140 179
+      147 179 154 175 153 185 161 184 168 195 166 197 166 208 163 211 164 213 162 216 166 221 161 228
+      159 232 154 233 147 230 146 227 111 209 107 203 109 202 81 160 70 153 72 150 68 143 71 139
+      77 135 78 137 76 139 76 141 82 142 86 145 90 142 96 132 106 129 114 123 117 118 115 113
+      118 113 129 121 133 127 151 127 157 130 152 137Z"></path>
+    <text class="sigla" x="121" y="174" aria-hidden="true">PER</text>
+    <text class="estrela" x="121" y="160" aria-hidden="true">★</text>
+  </g>
+
+  <g class="pais" data-pais="BRA" role="button" tabindex="0" aria-label="Brasil">
+    <title>Brasil</title>
+    <path class="contorno" d="M287 335 285 331 288 328 284 324 259 311 254 312 273 296 285 290 285 285 281 281 277 282 280 271
+      271 270 268 260 251 258 252 249 250 245 252 244 251 240 255 232 253 228 249 226 249 220 234 220
+      231 212 233 212 231 203 222 201 210 196 202 194 193 189 194 177 184 178 171 185 161 184 153 185
+      154 175 147 179 140 179 137 175 132 175 134 172 126 162 128 161 128 158 133 156 132 152 135 147
+      151 140 158 141 162 120 161 116 157 113 157 109 163 108 163 106 159 105 159 101 174 101 177 99
+      180 105 182 104 186 107 192 107 203 102 204 100 209 98 202 96 201 87 198 85 211 87 228 82
+      231 80 230 78 236 79 235 82 239 86 236 94 238 100 247 104 256 99 262 100 267 100 267 96
+      278 97 290 98 300 85 303 84 309 100 314 101 314 105 308 111 310 113 324 114 324 120 330 116
+      353 122 357 126 356 130 365 128 380 131 392 131 413 144 426 146 429 148 433 161 429 172 414 185
+      404 198 402 198 400 203 400 216 397 230 395 233 393 242 385 250 384 257 378 260 376 264 355 266
+      332 276 325 283 325 292 322 301Z"></path>
+    <text class="sigla" x="294" y="186" aria-hidden="true">BRA</text>
+    <text class="estrela" x="294" y="172" aria-hidden="true">★</text>
+  </g>
+
+  <g class="pais" data-pais="BOL" role="button" tabindex="0" aria-label="Bolívia">
+    <title>Bolívia</title>
+    <path class="contorno" d="M161 184 171 185 184 178 194 177 193 189 202 194 210 196 222 201 231 203 233 212 231 212 234 220
+      249 220 249 226 253 228 255 232 251 240 252 244 250 245 250 243 242 240 221 242 218 248 214 259
+      204 257 201 263 197 258 186 256 180 262 174 263 167 247 170 240 165 237 164 233 161 228 166 221
+      162 216 164 213 163 211 166 208 166 197 168 195Z"></path>
+    <text class="sigla" x="198" y="227" aria-hidden="true">BOL</text>
+    <text class="estrela" x="198" y="213" aria-hidden="true">★</text>
+  </g>
+
+  <g class="pais" data-pais="PRY" role="button" tabindex="0" aria-label="Paraguai">
+    <title>Paraguai</title>
+    <path class="contorno" d="M250 245 252 249 251 258 268 260 271 270 280 271 277 282 276 288 269 293 263 294 246 291 254 281
+      253 278 229 270 214 259 218 248 221 242 242 240 250 243Z"></path>
+    <text class="sigla" x="246" y="263" aria-hidden="true">PRY</text>
+    <text class="estrela" x="246" y="249" aria-hidden="true">★</text>
+  </g>
+
+  <g class="pais" data-pais="URY" role="button" tabindex="0" aria-label="Uruguai">
+    <title>Uruguai</title>
+    <path class="contorno" d="M254 312 259 311 284 324 288 328 285 331 287 335 284 339 275 343 252 340 248 336Z"></path>
+    <text class="sigla" x="267" y="327" aria-hidden="true">URY</text>
+    <text class="estrela" x="267" y="313" aria-hidden="true">★</text>
+  </g>
+
+  <g class="pais" data-pais="ARG" role="button" tabindex="0" aria-label="Argentina">
+    <title>Argentina</title>
+    <path class="contorno" d="M168 460 175 468 196 473 193 477 185 477 181 475 168 474Z
+      M254 312 248 336 247 339 257 345 256 350 261 353 260 356 253 364 241 368 217 368 219 381 214 383
+      206 384 198 381 195 383 197 390 202 392 206 390 208 393 195 399 192 409 185 409 179 413 176 418
+      184 423 191 424 189 430 180 434 174 441 164 447 167 454 172 458 169 457 142 455 139 452 139 447
+      134 447 131 445 131 438 137 435 139 431 138 427 142 422 145 413 144 409 148 408 147 405 143 404
+      146 401 142 399 141 391 144 390 142 382 146 369 151 367 149 354 155 350 154 344 159 338 159 332
+      157 331 153 319 158 312 157 306 160 300 171 290 168 287 170 285 170 274 178 271 181 264 180 262
+      186 256 197 258 201 263 204 257 214 259 229 270 253 278 254 281 246 291 263 294 269 293 276 288
+      277 282 281 281 285 285 285 290 273 296Z"></path>
+    <text class="sigla" x="204" y="373" aria-hidden="true">ARG</text>
+    <text class="estrela" x="204" y="359" aria-hidden="true">★</text>
+  </g>
+
+  <g class="pais" data-pais="CHL" role="button" tabindex="0" aria-label="Chile">
+    <title>Chile</title>
+    <path class="contorno" d="M168 460 168 474 181 475 172 479 150 476 132 468 121 461 149 469 155 462 163 459Z
+      M161 228 164 233 165 237 170 240 167 247 174 263 180 262 181 264 178 271 170 274 170 285 168 287
+      171 290 160 300 157 306 158 312 153 319 157 331 159 332 159 338 154 344 155 350 149 354 151 367
+      146 369 142 382 144 390 141 391 142 399 146 401 143 404 147 405 148 408 144 409 145 413 142 422
+      138 427 139 431 137 435 131 438 131 445 134 447 139 447 139 452 142 455 169 457 162 457 151 461
+      150 467 137 466 119 457 116 453 119 449 115 445 114 433 117 427 125 422 113 420 121 414 123 403
+      132 406 136 392 131 390 129 398 124 397 129 376 132 371 129 357 133 357 146 326 144 316 147 311
+      146 303 150 295 157 253 154 233 159 232Z"></path>
+    <path class="linha-rotulo" d="M128 332 144 332"></path>
+    <text class="sigla" x="114" y="332" aria-hidden="true">CHL</text>
+    <text class="estrela" x="150" y="332" aria-hidden="true">★</text>
+  </g>
+</svg>

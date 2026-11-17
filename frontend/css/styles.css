@@ -1,0 +1,260 @@
+:root {
+  --fundo: #f5f3e9;
+  --papel: #fffdf7;
+  --verde: #173f32;
+  --texto: #20372e;
+  --suave: #50665a;
+  --linha: #d9e0d4;
+  --ouro: #e7b858;
+  --fonte-titulos: "Instrument Serif", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "DM Sans", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+h1, h2, h3, p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid #2c775c; outline-offset: 3px; }
+
+.limite {
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+}
+
+.topo {
+  background: var(--verde);
+  color: var(--papel);
+  border-bottom: 3px solid var(--ouro);
+}
+
+.barra, .menu, .marca {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.barra {
+  min-height: 4.25rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-block: 0.7rem;
+}
+
+.marca, .menu a { text-decoration: none; font-weight: 700; }
+.menu { flex-wrap: wrap; font-size: 0.9rem; }
+.menu a:hover { text-decoration: underline; text-underline-offset: 0.25rem; }
+.topo :focus-visible { outline-color: var(--ouro); }
+
+.abertura { padding-block: clamp(1.8rem, 5vw, 3.25rem) 1.55rem; }
+.abertura h1 {
+  font: 400 clamp(2.6rem, 6vw, 4.8rem)/1.04 var(--fonte-titulos);
+  letter-spacing: -0.025em;
+  color: var(--verde);
+}
+.abertura p { margin-top: 0.75rem; color: var(--suave); }
+
+.explorador {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.cartao {
+  min-width: 0;
+  padding: clamp(1rem, 2.6vw, 1.5rem);
+  border: 1px solid var(--linha);
+  border-radius: 1rem;
+  background: var(--papel);
+  box-shadow: 0 5px 18px #20372e0b;
+  scroll-margin-top: 1rem;
+}
+
+.cartao h2 {
+  color: var(--verde);
+  font: 400 clamp(1.8rem, 3vw, 2.35rem)/1.08 var(--fonte-titulos);
+}
+.cartao h3 { font-size: 1rem; margin-bottom: 0.55rem; }
+
+.cabecalho-mapa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+.legenda { display: flex; align-items: center; gap: 0.35rem; font-size: 0.86rem; color: var(--suave); }
+.legenda span { color: #875704; font-size: 1.2rem; }
+
+.superficie-mapa {
+  display: grid;
+  justify-items: center;
+  border: 1px solid #dbe6da;
+  border-radius: 0.75rem;
+  background-color: #eaf1e8;
+  background-image:
+    linear-gradient(to right, #173f3210 1px, transparent 1px),
+    linear-gradient(to bottom, #173f3210 1px, transparent 1px);
+  background-size: 2rem 2rem;
+}
+.mapa-svg { display: block; width: min(100%, 26rem); height: auto; }
+.seletor { margin-top: 1rem; }
+.capital { margin-top: 0.55rem; color: var(--suave); }
+.secao-painel { margin-top: 1.25rem; padding-top: 1.05rem; border-top: 1px solid var(--linha); }
+
+.formulario, .campo, .duas-colunas { display: grid; gap: 0.8rem; }
+.campo { min-width: 0; gap: 0.25rem; font-size: 0.87rem; font-weight: 600; }
+.duas-colunas { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+input, select, textarea {
+  width: 100%;
+  min-width: 0;
+  color: var(--texto);
+  font: 400 1rem "DM Sans", system-ui, sans-serif;
+  padding: 0.58rem 0.65rem;
+  border: 1px solid #a9b9ac;
+  border-radius: 0.45rem;
+  background: #fff;
+}
+textarea { resize: vertical; }
+.bloco { padding: 0.75rem; background: #f2f5ed; border: 1px solid var(--linha); border-radius: 0.6rem; }
+.bloco summary { color: var(--verde); font-weight: 700; cursor: pointer; }
+.bloco > .formulario { margin-top: 0.8rem; }
+
+.botao {
+  min-height: 2.75rem;
+  padding: 0.65rem 1rem;
+  border: 0;
+  border-radius: 0.45rem;
+  background: var(--verde);
+  color: var(--papel);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.botao:disabled { background: #e8ede4; color: #4c6154; cursor: not-allowed; }
+.secundario { background: #e8ede4; color: var(--verde); }
+
+#mensagem:not(:empty) {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.55rem;
+  background: #e1eee1;
+  overflow-wrap: anywhere;
+}
+#mensagem[data-tipo="erro"] { background: #fae8e0; color: #7e3325; }
+.aviso { font-size: 0.88rem; color: var(--suave); }
+
+#lista-visitas, .lista-viagens {
+  display: grid;
+  gap: 0.75rem;
+  margin-block: 0.75rem;
+  font-size: 0.9rem;
+}
+.viagem { padding-block: 0.5rem; overflow-wrap: anywhere; }
+.viagem p { white-space: pre-wrap; }
+.viagem .botao {
+  display: block;
+  max-width: 100%;
+  margin-top: 0.5rem;
+}
+.conta { margin-top: 1.25rem; }
+.conta h2 { margin-bottom: 1rem; }
+.rodape { padding-block: 1.5rem; color: var(--suave); font-size: 0.8rem; }
+.pagina-conta.pagina-acesso { max-width: 32rem; }
+
+@media (max-width: 780px) {
+  .explorador { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .duas-colunas, .dados-conta { grid-template-columns: 1fr; }
+  .limite { width: calc(100% - 1.25rem); }
+  .barra, .menu { gap: 0.75rem; }
+}
+
+.menu a[aria-current="page"] {
+  color: var(--ouro);
+}
+
+.marca img {
+  display: block;
+}
+
+object.mapa-svg {
+  aspect-ratio: 464 / 508;
+  border: 0;
+}
+
+.pagina-conta {
+  max-width: 46rem;
+  padding-bottom: 2rem;
+}
+
+.perfil {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.perfil img {
+  flex: none;
+  border-radius: 50%;
+}
+
+.dados-conta {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  gap: 0.55rem 1rem;
+  flex: 1 1 15rem;
+  min-width: 0;
+  margin: 0;
+}
+
+.dados-conta dt {
+  font-weight: 700;
+}
+
+.dados-conta dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--suave);
+  overflow-wrap: anywhere;
+}
+
+#btn-sair.botao {
+  margin-top: 1rem;
+  padding: 0.65rem 1rem;
+  border: 0;
+  background: var(--verde);
+  color: var(--papel);
+  font-weight: 700;
+}
+
+.lista-viagens {
+  padding-left: 1.15rem;
+  color: var(--suave);
+}
+
+.acesso {
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 600px) {
+  .acesso {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .dados-conta { grid-template-columns: 1fr; }
+}

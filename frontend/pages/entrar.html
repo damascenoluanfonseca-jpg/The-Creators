@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Entrar | Passaporte Sul-Americano</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Instrument+Serif&amp;display=swap">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/app.js" defer></script>
+</head>
+
+<body>
+  <header class="topo">
+    <div class="limite barra">
+      <a class="marca" href="../index.html">
+        <img src="../img/logo.svg" width="24" height="28" alt="">
+        The-Creators
+      </a>
+
+      <nav class="menu" aria-label="Menu principal">
+        <a href="../index.html">Início</a>
+        <a href="./minha_conta.html">Minha conta</a>
+        <a href="./entrar.html" aria-current="page" data-publico>Entrar</a>
+        <a href="./criar.html" data-publico>Criar conta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="limite pagina-conta pagina-acesso">
+    <header class="abertura">
+      <h1>Entrar</h1>
+      <p>Acesse sua conta para consultar e registrar suas viagens.</p>
+    </header>
+
+    <p id="mensagem" role="status"></p>
+
+    <section class="cartao" aria-label="Acesso à conta">
+      <form
+        id="form-login"
+        class="formulario"
+        method="post"
+        action="/api/login"
+      >
+        <label class="campo" for="login-usuario">
+          Nome de usuário
+
+          <input
+            id="login-usuario"
+            type="text"
+            name="nome_usuario"
+            maxlength="40"
+            autocomplete="username"
+            required
+          >
+        </label>
+
+        <label class="campo" for="login-senha">
+          Senha
+
+          <input
+            id="login-senha"
+            type="password" maxlength="255"
+            name="senha"
+            autocomplete="current-password"
+            required
+          >
+        </label>
+
+        <button class="botao" type="submit" disabled>
+          Entrar
+        </button>
+      </form>
+
+      <p class="secao-painel">
+        Ainda não tem uma conta?
+        <a href="./criar.html">Criar conta</a>.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
