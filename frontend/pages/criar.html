@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <title>Criar conta | Passaporte Sul-Americano</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Instrument+Serif&amp;display=swap">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+  <header class="topo">
+    <div class="limite barra">
+      <a class="marca" href="../index.html">
+        <img src="../img/logo.svg" width="24" height="28" alt="">
+        The-Creators
+      </a>
+
+      <nav class="menu" aria-label="Menu principal">
+        <a href="../index.html">Início</a>
+        <a href="./minha_conta.html">Minha conta</a>
+        <a href="./entrar.html">Entrar</a>
+        <a href="./criar.html" aria-current="page">Criar conta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="limite pagina-conta" style="max-width: 32rem">
+    <header class="abertura">
+      <h1>Criar conta</h1>
+      <p>Cadastre-se para começar seu passaporte de viagens.</p>
+    </header>
+
+    <p id="mensagem" role="status"></p>
+
+    <section class="cartao" aria-label="Cadastro de conta">
+      <form
+        id="form-cadastro"
+        class="formulario"
+        method="post"
+        action="/api/usuarios"
+      >
+        <label class="campo" for="cadastro-nome">
+          Nome
+
+          <input
+            id="cadastro-nome"
+            type="text"
+            name="nome"
+            maxlength="100"
+            autocomplete="name"
+            required
+          >
+        </label>
+
+        <label class="campo" for="cadastro-usuario">
+          Nome de usuário
+
+          <input
+            id="cadastro-usuario"
+            type="text"
+            name="nome_usuario"
+            maxlength="40"
+            autocomplete="username"
+            required
+          >
+        </label>
+
+        <label class="campo" for="cadastro-email">
+          E-mail
+
+          <input
+            id="cadastro-email"
+            type="email"
+            name="email"
+            maxlength="150"
+            autocomplete="email"
+            required
+          >
+        </label>
+
+        <label class="campo" for="cadastro-senha">
+          Senha
+
+          <input
+            id="cadastro-senha"
+            type="password"
+            name="senha"
+            autocomplete="new-password"
+            required
+          >
+        </label>
+
+        <button class="botao" type="submit" disabled>
+          Criar conta
+        </button>
+      </form>
+
+      <p class="secao-painel">
+        Já tem uma conta?
+        <a href="./entrar.html">Entrar</a>.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
