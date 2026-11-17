@@ -59,10 +59,13 @@ The-Creators/
 │   │   ├── rotas_visitas.py
 │   │   ├── usuario.py
 │   │   └── visita.py
-│   ├── dao/
-│   │   ├── pais_dao.py
-│   │   ├── usuario_dao.py
+│   │   └── pais_dao.py
+│   │   └── usuario_dao.py
 │   │   └── visita_dao.py
+│   │
+│   │
+│   │
+│   │
 │   ├── config.py
 │   └── requirements.txt
 ├── database/
