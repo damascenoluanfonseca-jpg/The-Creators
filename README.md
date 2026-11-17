@@ -72,7 +72,9 @@ The-Creators/
 │   └── passaporte_sulamericano.sql
 ├── frontend/
 │   ├── css/
+│   ├── img/
 │   ├── js/
+│   ├── pages/
 │   └── index.html
 ├── tests/
 │   └── test_fluxo.py
