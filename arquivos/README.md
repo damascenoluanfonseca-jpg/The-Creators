@@ -49,6 +49,9 @@ The-Creators é um projeto colaborativo desenvolvido por quatro estudantes. A pr
 
 ```text
 The-Creators/
+├── arquivos/
+          ├──README.md
+          ├──img.png
 ├── backend/
 │   ├── Classes/
 │   │   ├── app.py
@@ -79,12 +82,7 @@ The-Creators/
 │      └── criar.html
 │       └──  entrar.html
 │      └──  minha_conta.html
-│   ├── index.html
-├── tests/
-│   └── test_fluxo.py
-├── .env.example
-└── README.md
-|___ img.png
+│   
 |___ index.html
 ```
 
