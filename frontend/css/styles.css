@@ -258,3 +258,22 @@ object.mapa-svg {
 @media (max-width: 480px) {
   .dados-conta { grid-template-columns: 1fr; }
 }
+
+.acesso-conta {
+    margin-top: 15px;
+}
+
+.abertura .acesso-conta p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.acesso-conta a {
+    color: #286448;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.acesso-conta a:hover {
+    opacity: 0.7;
+}
