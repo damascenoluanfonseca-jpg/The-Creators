@@ -1,5 +1,5 @@
 // O endereço é calculado a partir deste arquivo para funcionar em todas as páginas.
-const raizSite = new URL("../", document.currentScript.src);
+const raizSite = new URL("../../", document.currentScript.src);
 
 let usuario = null;
 let paises = [];
@@ -317,8 +317,11 @@ async function salvarViagem(evento) {
 
 async function iniciar() {
   prepararFormularioConta("form-login", "api/login", "index.html");
-  prepararFormularioConta("form-cadastro", "api/usuarios", "pages/entrar.html?cadastro=ok");
-  registrarEventosMapa();
+ prepararFormularioConta(
+  "form-cadastro",
+  "api/usuarios",
+  "frontend/pages/entrar.html?cadastro=ok"
+);
 
   const sair = document.getElementById("btn-sair");
   sair?.addEventListener("click", async () => {
@@ -354,7 +357,7 @@ async function iniciar() {
   }
 }
 
-// Ao voltar pelo navegador, confira a sessão para evitar mostrar dados de outra conta.
+
 window.addEventListener("pageshow", evento => {
   if (evento.persisted) {
     carregarSessao().catch(erro => mostrarMensagem(erro.message, "erro"));
