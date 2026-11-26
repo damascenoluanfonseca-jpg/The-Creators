@@ -21,11 +21,16 @@ def create_app(config=None):
         static_folder=str(PASTA_FRONTEND),
         static_url_path="",
     )
+
     app.config.from_mapping(configuracao())
+
     if config is not None:
         app.config.update(config)
+
     if not app.config["SECRET_KEY"]:
-        raise RuntimeError("Defina FLASK_SECRET_KEY no terminal antes de iniciar o Flask.")
+        raise RuntimeError(
+            "Defina FLASK_SECRET_KEY no terminal antes de iniciar o Flask."
+        )
 
     app.register_blueprint(rotas_paises)
     app.register_blueprint(rotas_usuarios)
@@ -33,21 +38,33 @@ def create_app(config=None):
 
     @app.before_request
     def conferir_origem():
-        if request.path.startswith("/api/") and request.method in {"POST", "PUT", "PATCH", "DELETE"}:
+        if request.path.startswith("/api/") and request.method in {
+            "POST", "PUT", "PATCH", "DELETE"
+        }:
             origem = request.headers.get("Origin")
+
             if origem and origem != request.host_url.rstrip("/"):
-                return jsonify(erro="Envie a requisição pela própria página do sistema."), 403
+                return jsonify(
+                    erro="Envie a requisição pela própria página do sistema."
+                ), 403
 
     @app.after_request
     def configurar_resposta(resposta):
         resposta.headers["X-Content-Type-Options"] = "nosniff"
+
         if request.path.startswith("/api/"):
             resposta.headers["Cache-Control"] = "no-store"
+
         return resposta
 
     @app.get("/")
+    @app.get("/index.html")
     def inicio():
-        return send_from_directory(PASTA_FRONTEND, "index.html")
+        return send_from_directory(PASTA_PROJETO, "index.html")
+
+    @app.get("/frontend/<path:arquivo>")
+    def arquivos_frontend(arquivo):
+        return send_from_directory(PASTA_FRONTEND, arquivo)
 
     @app.get("/api/status")
     def status():
@@ -55,13 +72,17 @@ def create_app(config=None):
 
     @app.errorhandler(MySQLError)
     def erro_banco(erro):
-        app.logger.error("Falha em operação no MariaDB: %s", erro)
-        return jsonify(erro="Falha ao consultar ou gravar no banco de dados."), 500
+        app.logger.error("Falha em operação no banco: %s", erro)
+
+        return jsonify(
+            erro="Falha ao consultar ou gravar no banco de dados."
+        ), 500
 
     @app.errorhandler(HTTPException)
     def erro_http(erro):
         if request.path.startswith("/api/"):
             return jsonify(erro=erro.description), erro.code
+
         return erro
 
     return app
