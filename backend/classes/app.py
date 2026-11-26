@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 from flask import Flask, jsonify, request, send_from_directory
@@ -36,18 +37,22 @@ def create_app(config=None):
     app.register_blueprint(rotas_usuarios)
     app.register_blueprint(rotas_visitas)
 
-    @app.before_request
+        @app.before_request
     def conferir_origem():
         if request.path.startswith("/api/") and request.method in {
             "POST", "PUT", "PATCH", "DELETE"
         }:
             origem = request.headers.get("Origin")
 
-            if origem and origem != request.host_url.rstrip("/"):
+            origens_permitidas = {
+                request.host_url.rstrip("/"),
+                os.getenv("SITE_ORIGIN", "").rstrip("/")
+            }
+
+            if origem and origem not in origens_permitidas:
                 return jsonify(
                     erro="Envie a requisição pela própria página do sistema."
                 ), 403
-
     @app.after_request
     def configurar_resposta(resposta):
         resposta.headers["X-Content-Type-Options"] = "nosniff"
